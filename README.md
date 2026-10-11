@@ -1,22 +1,43 @@
-# Car Selling Platform
+# CarSellingPlatform
 
-The Car Selling Platform is a simple yet comprehensive system built for the purpose of managing car sales. The application helps in managing the listings of cars available for sale, showing detailed car specifications, seller information, and enabling communication between the potential buyer and the seller.
+Eine JavaFX-Desktop-Anwendung zum Kaufen und Verkaufen von Autos. Nutzer legen ein Konto an, stellen ihre Autos mit allen wichtigen Daten ein, durchsuchen die Inserate anderer mit Filtern und schreiben Verkäufern direkt aus der App eine E-Mail.
 
-## Features
+Entstanden als Gruppenprojekt mit vier Personen im Modul „Programming Exercises“ im Sommersemester 2023.
 
-- **Listing Management**: The system allows sellers to add their car to the list of cars available for sale.
+<p align="center">
+  <img src="docs/dashboard.png" width="640" alt="Dashboard mit Filtern für Marke, Modell, Preis, Sitze, Erstzulassung und Kilometerstand sowie einer Liste von Inseraten">
+</p>
 
-- **Detailed Specifications**: Each listing on the platform provides in-depth details about the car including the make, model, color, body type, number of doors, seats, airbags, registration date, general inspection, fuel type and other important details a potential buyer would be interested in.
+## Funktionen
 
-- **Seller Information**: Each listing also includes detailed seller information such as their contact email and location.
+- **Konto:** Registrierung, Login, Profil bearbeiten und Konto löschen. Passwörter werden mit Salt gehasht gespeichert.
+- **Passwort vergessen:** Ein Einmal-Code kommt per E-Mail, danach lässt sich ein neues Passwort setzen.
+- **Inserate:** Autos mit ausführlichen Angaben einstellen, bearbeiten und löschen, zum Beispiel Marke, Modell, Farbe, Karosserie, Türen, Sitze, Airbags, Erstzulassung, HU und Kraftstoff.
+- **Suche:** Inserate nach Marke, Modell, Preis, Sitzen, Erstzulassung und Kilometerstand filtern.
+- **Kontakt:** Verkäufern direkt aus der App eine E-Mail schreiben.
+- **Benachrichtigungen:** E-Mails bei Registrierung, Passwortänderung und Kontolöschung.
 
-- **Communication**: The platform provides a functionality to write an email to the seller, facilitating seamless communication.
+## Technik
 
-## How to Run
+Java, JavaFX mit FXML, MySQL über JDBC, JavaMail, Maven
 
-The Car Selling Platform is a JavaFX application and requires a Java Runtime Environment (JRE) to run. 
+Die ausführliche Projektdokumentation mit Anforderungen, ER-Modell sowie UML-, Aktivitäts- und Sequenzdiagrammen liegt in [Doku.pdf](Doku.pdf) (Englisch). Das Klassendiagramm gibt es zusätzlich als [all.png](all.png).
 
-1. Clone this repository to your local machine.
-2. Navigate to the directory containing the `.jar` file.
-3. Run the application using the command `java -jar <name_of_jar_file>.jar`.
+## Starten
 
+Voraussetzungen sind ein JDK ab Version 17, eine MySQL-Datenbank und ein E-Mail-Konto mit SMTP-Zugang. Im Projekt war GMX eingestellt (`mail.gmx.net` in `Mail.java`).
+
+1. Eine Datenbank anlegen und das Schema aus [`schema.sql`](schema.sql) importieren.
+2. Die Datei `src/main/resources/com/example/carsellingplatform/config.properties` anlegen. Sie steht in der `.gitignore` und wird nicht mit hochgeladen.
+   ```properties
+   database.url=jdbc:mysql://localhost:3306/carsellingplatform
+   database.user=<benutzer>
+   database.password=<passwort>
+   email.username=<mail-adresse>
+   email.password=<mail-passwort>
+   ```
+3. Die Anwendung mit dem Maven Wrapper starten:
+   ```bash
+   ./mvnw clean javafx:run
+   ```
+   Unter Windows heißt der Befehl `mvnw.cmd clean javafx:run`.
