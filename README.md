@@ -5,7 +5,7 @@ Eine JavaFX-Desktop-Anwendung zum Kaufen und Verkaufen von Autos. Nutzer legen e
 Entstanden als Gruppenprojekt mit vier Personen im Modul „Programming Exercises“ im Sommersemester 2023.
 
 <p align="center">
-  <img src="docs/dashboard.png" width="640" alt="Dashboard mit Filtern für Marke, Modell, Preis, Sitze, Erstzulassung und Kilometerstand sowie einer Liste von Inseraten">
+  <img src="docs/dashboard.png" width="720" alt="Dashboard mit Filtern für Marke, Modell, Preis, Sitze, Erstzulassung und Kilometerstand sowie einer Liste von Inseraten">
 </p>
 
 ## Funktionen
@@ -16,6 +16,21 @@ Entstanden als Gruppenprojekt mit vier Personen im Modul „Programming Exercise
 - **Suche:** Inserate nach Marke, Modell, Preis, Sitzen, Erstzulassung und Kilometerstand filtern.
 - **Kontakt:** Verkäufern direkt aus der App eine E-Mail schreiben.
 - **Benachrichtigungen:** E-Mails bei Registrierung, Passwortänderung und Kontolöschung.
+
+## Screenshots
+
+<table>
+  <tr>
+    <td width="50%" align="center"><img src="docs/login.png" alt="Login mit Benutzername oder E-Mail und Passwort"><br><sub>Login</sub></td>
+    <td width="50%" align="center"><img src="docs/listing.png" alt="Detailansicht eines Inserats mit Verkäuferdaten und technischen Daten"><br><sub>Inserat mit Verkäuferkontakt und technischen Daten</sub></td>
+  </tr>
+  <tr>
+    <td width="50%" align="center"><img src="docs/my-listings.png" alt="Eigene Inserate mit Buttons zum Bearbeiten und Löschen"><br><sub>Eigene Inserate verwalten</sub></td>
+    <td width="50%" align="center"><img src="docs/edit-listing.png" alt="Formular zum Bearbeiten eines Inserats mit allen Fahrzeugdaten"><br><sub>Inserat bearbeiten</sub></td>
+  </tr>
+</table>
+
+Die Screenshots zeigen Beispieldaten, die Autobilder sind Platzhalter-Grafiken.
 
 ## Technik
 
