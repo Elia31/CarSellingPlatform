@@ -127,7 +127,7 @@ public class DatabaseHandler {
         //User uses Email to login
         if(isEmail){
             try {
-                String sql = "SELECT Salt, Password FROM b2klwcvfmvd8q1hoywvi.User WHERE Email=?";
+                String sql = "SELECT Salt, Password FROM User WHERE Email=?";
                 PreparedStatement statement = connection.prepareStatement(sql, ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
                 statement.setString(1, login);
                 resultSet = statement.executeQuery();
@@ -153,7 +153,7 @@ public class DatabaseHandler {
         //If User uses Username to login
         else {
             try {
-                String sql = "SELECT Salt, Password FROM b2klwcvfmvd8q1hoywvi.User WHERE Username=?";
+                String sql = "SELECT Salt, Password FROM User WHERE Username=?";
                 PreparedStatement statement = connection.prepareStatement(sql, ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
                 statement.setString(1, login);
                 resultSet = statement.executeQuery();
